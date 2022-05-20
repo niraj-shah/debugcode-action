@@ -1,5 +1,7 @@
 ## Usage
 
+Copy the `script.sh` file to the .github folder and add the following to the `workflows/main.yml` file:
+
 
 ```
 name: Check for Tokens
