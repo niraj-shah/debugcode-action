@@ -1,0 +1,9 @@
+name: 'Check Debug Code for Tokens'
+description: 'Check sensitive data (password etc.)'
+author: 'Niraj Shah'
+branding:
+  icon: 'key'
+  color: 'orange'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
