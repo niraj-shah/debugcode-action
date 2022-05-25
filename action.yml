@@ -1,9 +1,23 @@
-name: 'Check Debug Code for Tokens'
-description: 'Check sensitive data (password etc.)'
-author: 'Niraj Shah'
-branding:
-  icon: 'key'
-  color: 'orange'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
+name: Check for Tokens
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    outputs:
+      output1: ${{ steps.step1.outputs.message }}
+    steps:
+      - uses: actions/checkout@v1
+      - id: step1
+        name: script
+        run: | 
+          chmod +x "${GITHUB_WORKSPACE}/.github/script.sh"
+          "${GITHUB_WORKSPACE}/.github/script.sh"
+        shell: bash
